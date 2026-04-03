@@ -7,7 +7,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "node scripts/hooks/pre-bash.js",
+            "command": "node ${OPENCODE_PLUGIN_ROOT}/scripts/hooks/pre-bash.js",
             "description": "Check for dangerous commands before execution",
             "id": "pre:bash:security-check"
           }
@@ -21,7 +21,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "node scripts/hooks/post-edit.js",
+            "command": "node ${OPENCODE_PLUGIN_ROOT}/scripts/hooks/post-edit.js",
             "description": "Auto-format after file modifications",
             "id": "post:edit:format"
           }
@@ -35,7 +35,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "node scripts/hooks/session-start.js",
+            "command": "node ${OPENCODE_PLUGIN_ROOT}/scripts/hooks/session-start.js",
             "description": "Load project context on session start",
             "id": "session:start:context"
           }
@@ -49,7 +49,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "node scripts/hooks/session-end.js",
+            "command": "node ${OPENCODE_PLUGIN_ROOT}/scripts/hooks/session-end.js",
             "description": "Save session state on completion",
             "id": "session:end:save"
           }
