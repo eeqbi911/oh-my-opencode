@@ -1,0 +1,23 @@
+{
+  "name": "oh-my-opencode",
+  "version": "0.1.0",
+  "description": "The best agent harness for OpenCode - Skills, Agents, Rules, and Hooks",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "install": "node scripts/install.js",
+    "lint": "eslint . --ext .js,.ts",
+    "test": "node tests/run.js"
+  },
+  "keywords": [
+    "opencode",
+    "ai-agent",
+    "claude-code",
+    "agent-harness",
+    "skills"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {}
+}

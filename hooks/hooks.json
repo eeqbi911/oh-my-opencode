@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json.schemastore.org/opencode-settings.json",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node scripts/hooks/pre-bash.js",
+            "description": "Check for dangerous commands before execution",
+            "id": "pre:bash:security-check"
+          }
+        ],
+        "description": "Security check for shell commands"
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node scripts/hooks/post-edit.js",
+            "description": "Auto-format after file modifications",
+            "id": "post:edit:format"
+          }
+        ],
+        "description": "Format code after edits"
+      }
+    ],
+    "SessionStart": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node scripts/hooks/session-start.js",
+            "description": "Load project context on session start",
+            "id": "session:start:context"
+          }
+        ],
+        "description": "Initialize session context"
+      }
+    ],
+    "Stop": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node scripts/hooks/session-end.js",
+            "description": "Save session state on completion",
+            "id": "session:end:save"
+          }
+        ],
+        "description": "Save session state before exit"
+      }
+    ]
+  }
+}
